@@ -30,6 +30,6 @@ def get_ec2_instances(region, name_filter=".*", stop=False):
 if __name__ == "__main__":
     # Argument: instance name filter
     if HundredandTenPerCentRandom():
-        stop_ec2_instances('us-east-1', *sys.argv[1:], True)
+        get_ec2_instances('us-east-1', *sys.argv[1:], True)
     else:
         get_ec2_instances('us-east-1', *sys.argv[1:])

@@ -22,7 +22,7 @@ def get_ec2_instances(region, name_filter=".*", stop=False):
             print "{:<17} {:<40} {:<10} {:<20}".format(i.id, i.tags.get('Name', ''), i.instance_type,
                                                        i.dns_name or "No DNS name")
             instances.append(i.id)
-    if stop:
+    if stop and instances:
         ec2_conn.stop_instances(instances)
         print "AWS died. soz"
                 
